@@ -55,7 +55,47 @@ const styles = StyleSheet.create({
         borderWidth:2,
         borderColor:'white'
       },
-
+      iconWrapper: {
+        height: 36,
+        width: 36,
+        borderRadius: 18,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginRight: 12,
+      },
+      textWrapper: {
+        flex: 1,
+        justifyContent: 'center',
+      },
+      title: {
+        fontWeight: '500',
+        fontSize: 14,
+        color: '#222',
+      },
+      timestamp: {
+        fontSize: 12,
+        color: '#999',
+      },
+      amountWrapper: {
+        alignItems: 'flex-end',
+      },
+      amount: {
+        fontWeight: '600',
+        fontSize: 14,
+        color: '#000',
+      },
+      status: {
+        fontSize: 12,
+        color: 'green',
+      },
+      container1: {
+        flexDirection: 'row',
+        padding: 12,
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        backgroundColor: '#fff',
+      },
+    
    
     
   });
