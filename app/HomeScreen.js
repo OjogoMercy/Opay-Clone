@@ -1,17 +1,18 @@
-import { StyleSheet, Text, View ,Image,FlatList} from 'react-native'
+import { StyleSheet, Text, View ,Image,FlatList,TouchableOpacity} from 'react-native'
 import React from 'react'
 import { StatusBar } from 'react-native'
 import styles from '@/components/styles'
 import rose from '../assets/images/ROSE.jpg'
 import care from '../assets/images/icons8-customer-service-50.png'
-import { MaterialCommunityIcons,MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons,MaterialIcons,Ionicons,FontAwesome5 } from '@expo/vector-icons';
+
 
 
 const HomeScreen = () => {
   const transactions = [
     {
       id: '1',
-      type: 'Transfer to OLOWOSILE TEMITO...',
+      type: 'Transfer to OLOWOSILE TEMITO..',
       amount: '₦100.00',
       time: 'Mar 13th, 3:11:23 PM',
       status: 'Successful',
@@ -30,6 +31,22 @@ const HomeScreen = () => {
       iconColor: '#7D3EF0',
     },
   ];
+  const services = [
+    { name: 'Airtime', icon:require('../assets/images/icons8-tv-show-50.png'), tag: 'Up to 6%' },
+    { name: 'Data', icon: require('../assets/images/icons8-tv-show-50.png') },
+    { name: 'Betting', icon:require('../assets/images/icons8-tv-show-50.png')},
+    { name: 'OWealth', icon: require('../assets/images/icons8-tv-show-50.png') },
+    { name: 'Loan', icon: require('../assets/images/icons8-savings-50.png') },
+    { name: 'Play4aChild', icon: require('../assets/images/icons8-savings-50.png') },
+  ];
+  
+  const ServiceIcon = ({ name, icon, tag }) => (
+    <View style={styles.iconBox}>
+      <Image source={icon} style={styles.icon} />
+      {tag && <Text style={styles.tag}>{tag}</Text>}
+      <Text style={styles.iconLabel}>{name}</Text>
+    </View>
+  );
 
   const TransactionItem = ({ item }) => (
     <View style={styles.container1}>
@@ -48,7 +65,7 @@ const HomeScreen = () => {
   );
   return (
     <View style={styles.contain}> 
-      <StatusBar backgroundColor={'#fff'}/>
+      <StatusBar backgroundColor={'#f9f9f9'}/>
       <View style={styles.row}>
         <View style={styles.row}>
         <Image source={rose} style={styles.profile}/>
@@ -61,10 +78,54 @@ const HomeScreen = () => {
         <MaterialCommunityIcons name="bell-outline" size={22} color="black" />
         </View>
       </View>
+      <View style={styles.dash}>
+        <View style={{flexDirection:'row'}}>
+          <Ionicons name='shield-checkmark' size={18} color="white"/>
+          <Text style={{color:'white'}}> Available Balance </Text>
+          <Ionicons name='eye' size={18} color="white"/> 
+          <Text style={{color:'white',marginLeft:20}}>Transaction History > </Text>  
+        </View>
+        <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
+          <Text style={{color:'white',fontSize:28,fontWeight:'bold',marginTop:10}}>#0.00 ></Text>
+          <View style={styles.bag}>
+            <Text style={{color:'#00c26a',fontSize:12,fontWeight:'bold'}}>+Add money</Text>
+          </View>
+        </View>
+      </View>
+      <View>
       <FlatList
+      style={{backgroundColor:'white',borderRadius:15,marginTop:20}}
     data={transactions}
     keyExtractor={item => item.id}
     renderItem={({ item }) => <TransactionItem item={item} />}
+     />
+      </View>
+  <View style={styles.box1}>
+      <TouchableOpacity style={styles.option}>
+        <View style={styles.iconBox}>
+          <MaterialIcons name="person-outline" size={22} color="#0AA06E" />
+        </View>
+        <Text style={styles.label}>To OPay</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.option}>
+        <View style={styles.iconBox}>
+          <FontAwesome5 name="university" size={20} color="#0AA06E" />
+        </View>
+        <Text style={styles.label}>To Bank</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.option}>
+        <View style={styles.iconBox}>
+          <MaterialIcons name="open-in-new" size={22} color="#0AA06E" />
+        </View>
+        <Text style={styles.label}>Withdraw</Text>
+      </TouchableOpacity>
+  </View>
+  <FlatList
+    data={services}
+    keyExtractor={(item) => item.id}
+    numColumns={4}
+    renderItem={({ item }) => <ServiceIcon {...item} />}
+    contentContainerStyle={styles.container}
   />
     </View>
   )

@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
       },
       contain:{
         padding:10,
-        flex:1
+        flex:1,
+        backgroundColor:'#F9F9F9'
       },
       row:{
         flexDirection:'row',
@@ -92,8 +93,60 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         padding: 12,
         alignItems: 'center',
-        justifyContent: 'space-between',
         backgroundColor: '#fff',
+      },
+      dash:{
+        backgroundColor:'#00C26A',
+        width:'100%',
+        borderRadius:15,
+        padding:20
+      },
+      bag:{
+        padding:5,
+        backgroundColor:'white',
+        borderRadius:25,
+        justifyContent:'center',
+        height:30,
+        width:90,
+        alignItems:'center',
+        marginTop:12
+      },
+      option: {
+        alignItems: 'center',
+      },
+      iconBox: {
+        backgroundColor: '#E6F9F2',
+        borderRadius: 16,
+        padding: 12,
+        marginBottom: 6,
+      },
+      label: {
+        fontSize: 13,
+        color: '#222',
+      },
+      box1:{
+        flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingVertical: 20,
+    backgroundColor: '#fff',
+    marginTop:15,
+    borderRadius:20,
+    height:'14%'
+      },
+      tag: {
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        backgroundColor: 'red',
+        color: 'white',
+        borderRadius: 5,
+        padding: 2,
+        fontSize: 10,
+      },
+      iconLabel: {
+        marginTop: 5,
+        fontSize: 14,
+        textAlign: 'center',
       },
     
    
