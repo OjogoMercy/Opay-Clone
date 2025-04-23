@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View ,Image,FlatList,TouchableOpacity} from 'react-native'
 import React from 'react'
+import { useState } from 'react'
 import { StatusBar } from 'react-native'
 import styles from '@/components/styles'
 import rose from '../assets/images/ROSE.jpg'
@@ -9,6 +10,8 @@ import { MaterialCommunityIcons,MaterialIcons,Ionicons,FontAwesome5,FontAwesome 
 
 
 const HomeScreen = () => {
+  const [toggle, isToggle] = useState(false);
+
   const transactions = [
     {
       id: '1',
@@ -39,8 +42,7 @@ const HomeScreen = () => {
     { name: 'OWealth', icon: require('../assets/images/icons8-16-piggy-bank-58.png') },
     { name: 'Loan', icon: require('../assets/images/icons8-loan-64.png') },
     { name: 'Play4aChild', icon: require('../assets/images/icons8-charity-50.png') },
-  ];
-  
+  ]; 
   const ServiceIcon = ({ name, icon, tag }) => (
     <TouchableOpacity style={styles.options}>
         <View style={[styles.iconBox,{justifyContent:'space-around',borderRadius:30,padding:10,}]}>
@@ -49,9 +51,7 @@ const HomeScreen = () => {
     </View>
     <Text style={styles.label}>{name}</Text>
     </TouchableOpacity>
-    
   );
-
   const TransactionItem = ({ item }) => (
     <View style={styles.container1}>
       <View style={[styles.iconWrapper, { backgroundColor: item.iconBg }]}>
@@ -86,11 +86,13 @@ const HomeScreen = () => {
         <View style={{ flexDirection: 'row' }}>
           <Ionicons name='shield-checkmark' size={18} color="white" />
           <Text style={{ color: 'white' }}> Available Balance </Text>
-          <Ionicons name='eye' size={18} color="white" />
+          <TouchableOpacity onPress={() => isToggle(!toggle)}>
+          <Ionicons name={ toggle ? 'eye':'eye-off'} size={18} color="white" />
+          </TouchableOpacity>
           <Text style={{ color: 'white', marginLeft: 20 }}>Transaction History > </Text>
         </View>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Text style={{ color: 'white', fontSize: 28, fontWeight: 'bold', marginTop: 10 }}>#0.00 ></Text>
+          <Text style={{ color: 'white', fontSize: 28, fontWeight: 'bold', marginTop: 10 }}>{ toggle ? '#8750.00' :'****'}</Text>
           <TouchableOpacity style={styles.bag}>
             <Text style={{ color: '#00c26a', fontSize: 12, fontWeight: 'bold' }}>+Add money</Text>
           </TouchableOpacity>
@@ -127,7 +129,7 @@ const HomeScreen = () => {
         data={services}
         keyExtractor={(item) => item.id}
         numColumns={4}
-        renderItem={({ item }) => <ServiceIcon {...item} />}
+        renderItem={({ item }) => <ServiceIcon {...item}/>}
         contentContainerStyle={styles.flex} />
     </View><View style={styles.last}>
         <TouchableOpacity style={styles.con}>
@@ -153,5 +155,4 @@ const HomeScreen = () => {
       </View></>
   )
 }
-
 export default HomeScreen
