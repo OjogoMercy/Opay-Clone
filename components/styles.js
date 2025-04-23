@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#00C26A',
         width:'100%',
         borderRadius:15,
-        padding:20
+        padding:20,
       },
       bag:{
         padding:5,
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
         height:30,
         width:90,
         alignItems:'center',
-        marginTop:12
+        marginTop:12,
       },
       option: {
         alignItems: 'center',
@@ -142,6 +142,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 2,
         fontSize: 8,
+        opacity:0.7
       },
       iconLabel: {
         marginTop: 5,
