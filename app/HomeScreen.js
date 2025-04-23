@@ -35,15 +35,15 @@ const HomeScreen = () => {
     { name: 'Airtime', icon:require('../assets/images/icons8-mobile-network-66.png'), tag: 'Up to 6%' },
     { name: 'Data', icon: require('../assets/images/icons8-mobile-data-66.png'), tag:'Up to 6%' },
     { name: 'Betting', icon:require('../assets/images/icons8-football-50.png')},
-    { name: 'OWealth', icon: require('../assets/images/icons8-16-piggy-bank-58.png') },
     { name: 'TV', icon: require('../assets/images/icons8-tv-show-50.png') },
+    { name: 'OWealth', icon: require('../assets/images/icons8-16-piggy-bank-58.png') },
     { name: 'Loan', icon: require('../assets/images/icons8-loan-64.png') },
     { name: 'Play4aChild', icon: require('../assets/images/icons8-charity-50.png') },
   ];
   
   const ServiceIcon = ({ name, icon, tag }) => (
     <TouchableOpacity style={styles.options}>
-        <View style={[styles.iconBox,{justifyContent:'space-around',borderRadius:30}]}>
+        <View style={[styles.iconBox,{justifyContent:'space-around',borderRadius:30,padding:10,}]}>
       <Image source={icon} style={styles.icon} />
       {tag && <Text style={styles.tag}>{tag}</Text>}
     </View>
@@ -91,9 +91,9 @@ const HomeScreen = () => {
         </View>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
           <Text style={{ color: 'white', fontSize: 28, fontWeight: 'bold', marginTop: 10 }}>#0.00 ></Text>
-          <View style={styles.bag}>
+          <TouchableOpacity style={styles.bag}>
             <Text style={{ color: '#00c26a', fontSize: 12, fontWeight: 'bold' }}>+Add money</Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
       <View>
@@ -130,26 +130,26 @@ const HomeScreen = () => {
         renderItem={({ item }) => <ServiceIcon {...item} />}
         contentContainerStyle={styles.flex} />
     </View><View style={styles.last}>
-        <View style={styles.con}>
+        <TouchableOpacity style={styles.con}>
           <FontAwesome name="dot-circle-o" size={22} color="green" />
           <Text style={[styles.iconText, { color: 'green' }]}>Home</Text>
-        </View>
-        <View style={styles.con}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.con}>
           <MaterialIcons name="card-giftcard" size={22} color="#999" />
           <Text style={styles.iconText}>Rewards</Text>
-        </View>
-        <View style={styles.con}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.con}>
           <MaterialIcons name="insert-chart-outlined" size={22} color="#999" />
           <Text style={styles.iconText}>Finance</Text>
-        </View>
-        <View style={styles.con}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.con}>
           <FontAwesome name="credit-card" size={22} color="#999" />
           <Text style={styles.iconText}>Cards</Text>
-        </View>
-        <View style={styles.con}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.con}>
           <Ionicons name="person-circle-outline" size={27} color="#999"/>
           <Text style={styles.iconText}>Me</Text>
-        </View>
+        </TouchableOpacity>
       </View></>
   )
 }

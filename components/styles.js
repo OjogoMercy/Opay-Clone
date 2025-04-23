@@ -121,8 +121,8 @@ const styles = StyleSheet.create({
         marginBottom: 6,
       },
       label: {
-        fontSize: 13,
-        color: '#222',
+        fontSize: 12,
+        color: '#777',
       },
       box1:{
         flexDirection: 'row',
@@ -157,8 +157,8 @@ const styles = StyleSheet.create({
         justifyContent:'space-between'
       },
       icon:{
-        height:22,
-        width:22
+        height:25,
+        width:25
       },
       options:{
         alignItems:'center',
