@@ -147,8 +147,7 @@ const HomeScreen = () => {
           <Text style={styles.iconText}>Cards</Text>
         </View>
         <View style={styles.con}>
-          <Ionicons name="person-circle-outline" size={27} color="#999" />
-          <View style={styles.notificationDot} />
+          <Ionicons name="person-circle-outline" size={27} color="#999"/>
           <Text style={styles.iconText}>Me</Text>
         </View>
       </View></>
