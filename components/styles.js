@@ -136,16 +136,16 @@ const styles = StyleSheet.create({
       tag: {
         position: 'absolute',
         top: 0,
-        right: 0,
+        right: -20,
         backgroundColor: 'red',
         color: 'white',
         borderRadius: 5,
         padding: 2,
-        fontSize: 10,
+        fontSize: 8,
       },
       iconLabel: {
         marginTop: 5,
-        fontSize: 14,
+        fontSize: 12,
         textAlign: 'center',
       },
       flex:{
@@ -157,15 +157,29 @@ const styles = StyleSheet.create({
         justifyContent:'space-between'
       },
       icon:{
-        height:30,
-        width:30
+        height:22,
+        width:22
       },
       options:{
         alignItems:'center',
-        width:70,
-        marginTop:10
+        width:80,
+        marginTop:15
       },
-    
+      last:{
+        flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: '#fff',
+    paddingVertical: 10,
+    width:'100%'
+      },
+      iconText: {
+        fontSize: 12,
+        color: 'gray',
+        marginTop: 4,
+      },
+      con:{
+        alignItems:'center'
+      },
    
     
   });
