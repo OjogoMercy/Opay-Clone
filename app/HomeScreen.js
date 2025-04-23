@@ -32,20 +32,24 @@ const HomeScreen = () => {
     },
   ];
   const services = [
-    { name: 'Airtime', icon:require('../assets/images/icons8-tv-show-50.png'), tag: 'Up to 6%' },
-    { name: 'Data', icon: require('../assets/images/icons8-tv-show-50.png') },
-    { name: 'Betting', icon:require('../assets/images/icons8-tv-show-50.png')},
-    { name: 'OWealth', icon: require('../assets/images/icons8-tv-show-50.png') },
-    { name: 'Loan', icon: require('../assets/images/icons8-savings-50.png') },
+    { name: 'Airtime', icon:require('../assets/images/icons8-mobile-network-66.png'), tag: 'Up to 6%' },
+    { name: 'Data', icon: require('../assets/images/icons8-mobile-data-66.png'), tag:'up to 6%' },
+    { name: 'Betting', icon:require('../assets/images/icons8-football-50.png')},
+    { name: 'OWealth', icon: require('../assets/images/icons8-16-piggy-bank-58.png') },
+    { name: 'TV', icon: require('../assets/images/icons8-tv-show-50.png') },
+    { name: 'Loan', icon: require('../assets/images/icons8-loan-64.png') },
     { name: 'Play4aChild', icon: require('../assets/images/icons8-savings-50.png') },
   ];
   
   const ServiceIcon = ({ name, icon, tag }) => (
-    <View style={styles.iconBox}>
+    <TouchableOpacity style={styles.options}>
+        <View style={[styles.iconBox,{justifyContent:'space-around'}]}>
       <Image source={icon} style={styles.icon} />
       {tag && <Text style={styles.tag}>{tag}</Text>}
-      <Text style={styles.iconLabel}>{name}</Text>
     </View>
+    <Text style={styles.label}>{name}</Text>
+    </TouchableOpacity>
+    
   );
 
   const TransactionItem = ({ item }) => (
@@ -125,7 +129,7 @@ const HomeScreen = () => {
     keyExtractor={(item) => item.id}
     numColumns={4}
     renderItem={({ item }) => <ServiceIcon {...item} />}
-    contentContainerStyle={styles.container}
+    contentContainerStyle={styles.flex}
   />
     </View>
   )

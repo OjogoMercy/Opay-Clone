@@ -148,6 +148,23 @@ const styles = StyleSheet.create({
         fontSize: 14,
         textAlign: 'center',
       },
+      flex:{
+        backgroundColor:'white',
+        width:'100%',
+        borderRadius:15,
+        marginTop:20,
+        padding:15,
+        justifyContent:'space-between'
+      },
+      icon:{
+        height:30,
+        width:30
+      },
+      options:{
+        alignItems:'center',
+        width:70,
+        marginTop:10
+      },
     
    
     
