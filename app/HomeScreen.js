@@ -135,15 +135,15 @@ const HomeScreen = () => {
           <Text style={[styles.iconText, { color: 'green' }]}>Home</Text>
         </View>
         <View style={styles.con}>
-          <MaterialIcons name="card-giftcard" size={20} color="#999" />
+          <MaterialIcons name="card-giftcard" size={22} color="#999" />
           <Text style={styles.iconText}>Rewards</Text>
         </View>
         <View style={styles.con}>
-          <FontAwesome name="line-chart" size={20} color="#999" />
+          <MaterialIcons name="insert-chart-outlined" size={22} color="#999" />
           <Text style={styles.iconText}>Finance</Text>
         </View>
         <View style={styles.con}>
-          <FontAwesome name="credit-card" size={20} color="#999" />
+          <FontAwesome name="credit-card" size={22} color="#999" />
           <Text style={styles.iconText}>Cards</Text>
         </View>
         <View style={styles.con}>
