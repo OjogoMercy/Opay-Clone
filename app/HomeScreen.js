@@ -99,11 +99,12 @@ const HomeScreen = () => {
         </View>
       </View>
       <View>
+        {toggle && (
         <FlatList
           style={{ backgroundColor: 'white', borderRadius: 15, marginTop: 20 }}
           data={transactions}
           keyExtractor={item => item.id}
-          renderItem={({ item }) => <TransactionItem item={item} />} />
+          renderItem={({ item }) => <TransactionItem item={item} />} />)}
       </View>
       <View style={styles.box1}>
         <TouchableOpacity style={styles.option}>
@@ -131,7 +132,8 @@ const HomeScreen = () => {
         numColumns={4}
         renderItem={({ item }) => <ServiceIcon {...item}/>}
         contentContainerStyle={styles.flex} />
-    </View><View style={styles.last}>
+    </View>
+    <View style={styles.last}>
         <TouchableOpacity style={styles.con}>
           <FontAwesome name="dot-circle-o" size={22} color="green" />
           <Text style={[styles.iconText, { color: 'green' }]}>Home</Text>
